@@ -118,6 +118,7 @@ public class Patient extends Person {
         return true;
     }
 
+    @Override
     public String toString() {
         return "Patient" + "\nMNID: " + this.pid +
                 "\nFirstname: " + this.getFirstName() +
