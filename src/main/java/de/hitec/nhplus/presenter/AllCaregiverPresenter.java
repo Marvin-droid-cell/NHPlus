@@ -1,4 +1,4 @@
-package de.hitec.nhplus.controller;
+package de.hitec.nhplus.presenter;
 
 import de.hitec.nhplus.datastorage.CaregiverDao;
 import de.hitec.nhplus.datastorage.DaoFactory;
