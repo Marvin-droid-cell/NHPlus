@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8dd96c2d-3463-4053-aa9b-622a3f659213" name="Changes" comment="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert">
-      <change afterPath="$PROJECT_DIR$/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a5b8be1-080b-4129-b89d-42f1ea832b90.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a5b8be1-080b-4129-b89d-42f1ea832b90.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/nursingHome.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/nursingHome.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/controller/AllPatientPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/controller/AllPatientPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/PatientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/PatientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/utils/SetUpDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/utils/SetUpDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/AllPatientView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/AllPatientView.fxml" afterDir="false" />
+    <list default="true" id="8dd96c2d-3463-4053-aa9b-622a3f659213" name="Changes" comment="Merge-Konflikte lösen">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Changes2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Changes2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Treatment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Treatment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllCaregiverPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllCaregiverPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllPatientPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllPatientPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllTreatmentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllTreatmentPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/MainWindowPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/MainWindowPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/NewTreatmentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/NewTreatmentPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/TreatmentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/TreatmentPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/AllTreatmentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/AllTreatmentView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/TreatmentView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/TreatmentView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +30,9 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.SetUpDB.executor": "Run",
-    "git-widget-placeholder": "Merging feature/02",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "git-widget-placeholder": "feature/03",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "copyright"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Main">
@@ -73,6 +74,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert" />
-    <option name="LAST_COMMIT_MESSAGE" value="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert" />
+    <MESSAGE value="Merge-Konflikte lösen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge-Konflikte lösen" />
   </component>
 </project>

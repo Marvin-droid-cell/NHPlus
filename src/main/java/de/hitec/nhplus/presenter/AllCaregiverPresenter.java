@@ -18,6 +18,10 @@ import javafx.scene.control.cell.TextFieldTableCell;
 
 import java.sql.SQLException;
 
+/**
+ * The <code>AllCaregiverPresenter</code> contains the entire logic of the caregiver view. It determines which data is displayed and how to react to events.
+ */
+
 public class AllCaregiverPresenter {
 
     @FXML

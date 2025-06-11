@@ -34,8 +34,8 @@ public class TreatmentDao extends DaoImp<Treatment> {
     protected PreparedStatement getCreateStatement(Treatment treatment) {
         PreparedStatement preparedStatement = null;
         try {
-            final String SQL = "INSERT INTO treatment (pid, treatment_date, begin, end, description, remark) " +
-                    "VALUES (?, ?, ?, ?, ?, ?)";
+            final String SQL = "INSERT INTO treatment (pid, treatment_date, begin, end, description, remark, cgid) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)";
             preparedStatement = this.connection.prepareStatement(SQL);
             preparedStatement.setLong(1, treatment.getPid());
             preparedStatement.setString(2, treatment.getDate());
@@ -43,6 +43,7 @@ public class TreatmentDao extends DaoImp<Treatment> {
             preparedStatement.setString(4, treatment.getEnd());
             preparedStatement.setString(5, treatment.getDescription());
             preparedStatement.setString(6, treatment.getRemarks());
+            preparedStatement.setLong(7, treatment.getCgid());
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
@@ -80,7 +81,7 @@ public class TreatmentDao extends DaoImp<Treatment> {
         LocalTime begin = DateConverter.convertStringToLocalTime(result.getString(4));
         LocalTime end = DateConverter.convertStringToLocalTime(result.getString(5));
         return new Treatment(result.getLong(1), result.getLong(2),
-                date, begin, end, result.getString(6), result.getString(7));
+                date, begin, end, result.getString(6), result.getString(7),result.getLong(7));
     }
 
     /**
@@ -116,7 +117,7 @@ public class TreatmentDao extends DaoImp<Treatment> {
             LocalTime begin = DateConverter.convertStringToLocalTime(result.getString(4));
             LocalTime end = DateConverter.convertStringToLocalTime(result.getString(5));
             Treatment treatment = new Treatment(result.getLong(1), result.getLong(2),
-                    date, begin, end, result.getString(6), result.getString(7));
+                    date, begin, end, result.getString(6), result.getString(7),result.getLong(8));
             list.add(treatment);
         }
         return list;
@@ -150,6 +151,38 @@ public class TreatmentDao extends DaoImp<Treatment> {
      */
     public List<Treatment> readTreatmentsByPid(long pid) throws SQLException {
         ResultSet result = getReadAllTreatmentsOfOnePatientByPid(pid).executeQuery();
+        return getListFromResultSet(result);
+    }
+
+
+    /**
+     * Generates a <code>PreparedStatement</code> to query all treatments of a caregiver with a given caregiver id (cgid).
+     *
+     * @param cgid caregiver id to query all treatments referencing this id.
+     * @return <code>PreparedStatement</code> to query all treatments of the given caregiver id (cgid).
+     */
+    private PreparedStatement getReadAllTreatmentsOfOneCaregiverByCgid(long cgid) {
+        PreparedStatement preparedStatement = null;
+        try {
+            final String SQL = "SELECT * FROM treatment WHERE cgid = ?";
+            preparedStatement = this.connection.prepareStatement(SQL);
+            preparedStatement.setLong(1, cgid);
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return preparedStatement;
+    }
+
+    /**
+     * Queries all treatments of a given caregiver id (cgid) and maps the results to an <code>ArrayList</code> with
+     * objects of class <code>Treatment</code>.
+     *
+     * @param cgid Caregiver id to query all treatments referencing this id.
+     * @return <code>ArrayList</code> with objects of class <code>Treatment</code> of all rows in the
+     * <code>ResultSet</code>.
+     */
+    public List<Treatment> readTreatmentsByCgid(long cgid) throws SQLException {
+        ResultSet result = getReadAllTreatmentsOfOneCaregiverByCgid(cgid).executeQuery();
         return getListFromResultSet(result);
     }
 

@@ -8,6 +8,9 @@ import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
 
+/**
+ * The <code>MainWindowPresenter</code> contains the entire logic of the mainWindow view. It determines which data is displayed and how to react to events.
+ */
 public class MainWindowPresenter {
 
     @FXML

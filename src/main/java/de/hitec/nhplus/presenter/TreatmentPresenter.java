@@ -1,8 +1,10 @@
 package de.hitec.nhplus.presenter;
 
+import de.hitec.nhplus.datastorage.CaregiverDao;
 import de.hitec.nhplus.datastorage.DaoFactory;
 import de.hitec.nhplus.datastorage.PatientDao;
 import de.hitec.nhplus.datastorage.TreatmentDao;
+import de.hitec.nhplus.model.Caregiver;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -13,6 +15,9 @@ import de.hitec.nhplus.utils.DateConverter;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
+/**
+ * The <code>TreatmentPresenter</code> contains the entire logic of the treatment view. It determines which data is displayed and how to react to events.
+ */
 public class TreatmentPresenter {
 
     @FXML
@@ -20,6 +25,12 @@ public class TreatmentPresenter {
 
     @FXML
     private Label labelCareLevel;
+
+    @FXML
+    private Label labelCaregiverName;
+
+    @FXML
+    private Label labelCaregiverTel;
 
     @FXML
     private TextField textFieldBegin;
@@ -36,18 +47,21 @@ public class TreatmentPresenter {
     @FXML
     private DatePicker datePicker;
 
-    private AllTreatmentPresenter controller;
+    private AllTreatmentPresenter presenter;
     private Stage stage;
     private Patient patient;
+    private Caregiver caregiver;
     private Treatment treatment;
 
-    public void initializeController(AllTreatmentPresenter controller, Stage stage, Treatment treatment) {
+    public void initializePresenter(AllTreatmentPresenter presenter, Stage stage, Treatment treatment) {
         this.stage = stage;
-        this.controller= controller;
+        this.presenter = presenter;
         PatientDao pDao = DaoFactory.getDaoFactory().createPatientDAO();
+        CaregiverDao cDao = DaoFactory.getDaoFactory().createCaregiverDAO();
         try {
-            this.patient = pDao.read((int) treatment.getPid());
             this.treatment = treatment;
+            this.patient = pDao.read((int) treatment.getPid());
+            this.caregiver = cDao.read((int) treatment.getCgid());
             showData();
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -57,6 +71,8 @@ public class TreatmentPresenter {
     private void showData(){
         this.labelPatientName.setText(patient.getSurname()+", "+patient.getFirstName());
         this.labelCareLevel.setText(patient.getCareLevel());
+        this.labelCaregiverName.setText(caregiver.getSurname()+", "+caregiver.getFirstName());
+        this.labelCaregiverTel.setText(caregiver.getTelNumber());
         LocalDate date = DateConverter.convertStringToLocalDate(treatment.getDate());
         this.datePicker.setValue(date);
         this.textFieldBegin.setText(this.treatment.getBegin());
@@ -73,7 +89,7 @@ public class TreatmentPresenter {
         this.treatment.setDescription(textFieldDescription.getText());
         this.treatment.setRemarks(textAreaRemarks.getText());
         doUpdate();
-        controller.readAllAndShowInTableView();
+        presenter.readAllAndShowInTableView();
         stage.close();
     }
 
