@@ -26,7 +26,10 @@ import java.util.List;
 
 
 /**
- * The <code>AllTreatmentPresenter</code> contains the entire logic of the treatment view. It determines which data is displayed and how to react to events.
+ * The AllTreatmentPresenter class serves as the controller in an MVC-based application
+ * for managing the display and handling of treatment data in a user interface.
+ * It binds the data model to the JavaFX UI components, providing logic for event handling
+ * and data manipulation.
  */
 
 public class AllTreatmentPresenter {
@@ -115,7 +118,7 @@ public class AllTreatmentPresenter {
         patientSelection.clear();
         patientSelection.add("alle");
 
-        PatientDao dao = DaoFactory.getDaoFactory().createPatientDAO();
+        PatientDao dao = DaoFactory.getDaoFactory().createPatientDao();
         try {
             patientList = (ArrayList<Patient>) dao.readAll();
             for (Patient patient : patientList) {
@@ -132,7 +135,7 @@ public class AllTreatmentPresenter {
         caregiverSelection.clear();
         caregiverSelection.add("alle");
 
-        CaregiverDao dao = DaoFactory.getDaoFactory().createCaregiverDAO();
+        CaregiverDao dao = DaoFactory.getDaoFactory().createCaregiverDao();
         try {
             caregiverList = (ArrayList<Caregiver>) dao.readAll();
             for (Caregiver caregiver : caregiverList) {

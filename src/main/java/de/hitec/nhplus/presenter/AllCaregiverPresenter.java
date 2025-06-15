@@ -151,7 +151,7 @@ public class AllCaregiverPresenter {
      */
     private void readAllAndShowInTableView() {
         this.caregivers.clear();
-        this.dao = DaoFactory.getDaoFactory().createCaregiverDAO();
+        this.dao = DaoFactory.getDaoFactory().createCaregiverDao();
         try {
             this.caregivers.addAll(this.dao.readAll());
         } catch (SQLException exception) {
@@ -169,7 +169,7 @@ public class AllCaregiverPresenter {
         Caregiver selectedItem = this.tableView.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             try {
-                DaoFactory.getDaoFactory().createCaregiverDAO().deleteById(selectedItem.getCgID());
+                DaoFactory.getDaoFactory().createCaregiverDao().deleteById(selectedItem.getCgID());
                 this.tableView.getItems().remove(selectedItem);
             } catch (SQLException exception) {
                 exception.printStackTrace();
@@ -205,6 +205,11 @@ public class AllCaregiverPresenter {
         this.txfTelephone.clear();
     }
 
+    /**
+     * Validates the input data by checking whether the first name, surname, and telephone fields are not blank.
+     *
+     * @return true if all input fields have values, false otherwise
+     */
     private boolean areInputDataValid() {
         return !this.txfFirstname.getText().isBlank() && !this.txfSurname.getText().isBlank() &&
                 !this.txfTelephone.getText().isBlank();

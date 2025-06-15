@@ -192,7 +192,7 @@ public class AllPatientPresenter {
      */
     private void readAllAndShowInTableView() {
         this.patients.clear();
-        this.dao = DaoFactory.getDaoFactory().createPatientDAO();
+        this.dao = DaoFactory.getDaoFactory().createPatientDao();
         try {
             this.patients.addAll(this.dao.readAll());
         } catch (SQLException exception) {
@@ -210,7 +210,7 @@ public class AllPatientPresenter {
         Patient selectedItem = this.tableView.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             try {
-                DaoFactory.getDaoFactory().createPatientDAO().deleteById(selectedItem.getPid());
+                DaoFactory.getDaoFactory().createPatientDao().deleteById(selectedItem.getPid());
                 this.tableView.getItems().remove(selectedItem);
             } catch (SQLException exception) {
                 exception.printStackTrace();

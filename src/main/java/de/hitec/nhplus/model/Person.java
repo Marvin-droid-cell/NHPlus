@@ -6,6 +6,12 @@ public abstract class Person {
     private final SimpleStringProperty firstName;
     private final SimpleStringProperty surname;
 
+    /**
+     * Constructs a new Person with the specified first name and surname.
+     *
+     * @param firstName The first name of the person.
+     * @param surname The surname of the person.
+     */
     public Person(String firstName, String surname) {
         this.firstName = new SimpleStringProperty(firstName);
         this.surname = new SimpleStringProperty(surname);
