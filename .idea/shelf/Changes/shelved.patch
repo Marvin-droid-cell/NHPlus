@@ -19,14 +19,14 @@ diff --git a/src/main/java/de/hitec/nhplus/controller/AllCaregiverPresenter.java
  import javafx.collections.FXCollections;
 @@ -19,7 +17,6 @@
  import javafx.scene.control.cell.TextFieldTableCell;
- 
+
  import java.sql.SQLException;
 -import java.time.LocalDate;
- 
+
  public class AllCaregiverPresenter {
- 
+
 @@ -91,7 +88,6 @@
- 
+
          this.btnAdd.setDisable(true);
          ChangeListener<String> inputNewCaregiverListener = (observableValue, oldText, newText) ->
 -                AllCaregiverPresenter.this.btnAdd.setDisable(!AllCaregiverPresenter.this.areInputDataValid());
@@ -121,3 +121,72 @@ diff --git a/.idea/workspace.xml b/.idea/workspace.xml
      </task>
      <task id="LOCAL-00001" summary="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert">
        <option name="closed" value="true" />
+diff --git a/.idea/shelf/Changes1/shelved.patch b/.idea/shelf/Changes1/shelved.patch
+new file mode 100644
+--- /dev/null	(date 1748948684460)
++++ b/.idea/shelf/Changes1/shelved.patch	(date 1748948684460)
+@@ -0,0 +1,64 @@
++Index: workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
++<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8dd96c2d-3463-4053-aa9b-622a3f659213\" name=\"Changes\" comment=\"Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert\">\r\n      <change afterPath=\"$PROJECT_DIR$/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources.local.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dataSources/5a5b8be1-080b-4129-b89d-42f1ea832b90.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dataSources/5a5b8be1-080b-4129-b89d-42f1ea832b90.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/material_theme_project_new.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/material_theme_project_new.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/db/nursingHome.db\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/db/nursingHome.db\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/de/hitec/nhplus/controller/AllPatientPresenter.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/de/hitec/nhplus/controller/AllPatientPresenter.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/PatientDao.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/PatientDao.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Patient.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Patient.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/de/hitec/nhplus/utils/SetUpDB.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/de/hitec/nhplus/utils/SetUpDB.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/AllPatientView.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/AllPatientView.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"Application.SetUpDB.executor\": \"Run\",\r\n    \"git-widget-placeholder\": \"Merging feature/02\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"de.hitec.nhplus.Main\" />\r\n      <module name=\"NHPlus\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"de.hitec.nhplus.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SetUpDB\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"de.hitec.nhplus.utils.SetUpDB\" />\r\n      <module name=\"NHPlus\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"de.hitec.nhplus.utils.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.SetUpDB\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert\" />\r\n  </component>\r\n</project>
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/workspace.xml b/workspace.xml
++--- a/workspace.xml	(revision 2d812f0dff9be23ab5c9c7c21be9be94744fe601)
+++++ b/workspace.xml	(date 1748948630670)
++@@ -4,19 +4,7 @@
++     <option name="autoReloadType" value="SELECTIVE" />
++   </component>
++   <component name="ChangeListManager">
++-    <list default="true" id="8dd96c2d-3463-4053-aa9b-622a3f659213" name="Changes" comment="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert">
++-      <change afterPath="$PROJECT_DIR$/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a5b8be1-080b-4129-b89d-42f1ea832b90.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a5b8be1-080b-4129-b89d-42f1ea832b90.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/db/nursingHome.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/nursingHome.db" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/controller/AllPatientPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/controller/AllPatientPresenter.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/PatientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/PatientDao.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Patient.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/utils/SetUpDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/utils/SetUpDB.java" afterDir="false" />
++-      <change beforePath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/AllPatientView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/AllPatientView.fxml" afterDir="false" />
++-    </list>
+++    <list default="true" id="8dd96c2d-3463-4053-aa9b-622a3f659213" name="Changes" comment="Merge-Konflikte lösen" />
++     <option name="SHOW_DIALOG" value="false" />
++     <option name="HIGHLIGHT_CONFLICTS" value="true" />
++     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++@@ -30,7 +18,7 @@
++   "keyToString": {
++     "Application.Main.executor": "Run",
++     "Application.SetUpDB.executor": "Run",
++-    "git-widget-placeholder": "Merging feature/02",
+++    "git-widget-placeholder": "feature/02",
++     "node.js.selected.package.tslint": "(autodetect)"
++   }
++ }]]></component>
++@@ -69,10 +57,21 @@
++     </recent_temporary>
++   </component>
++   <component name="TaskManager">
+++    <task id="LOCAL-00001" summary="Merge-Konflikte lösen">
+++      <option name="closed" value="true" />
+++      <created>1748948552439</created>
+++      <option name="number" value="00001" />
+++      <option name="presentableId" value="LOCAL-00001" />
+++      <option name="project" value="LOCAL" />
+++      <updated>1748948552439</updated>
+++    </task>
+++    <option name="localTasksCounter" value="2" />
++     <servers />
++   </component>
++   <component name="VcsManagerConfiguration">
++     <MESSAGE value="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert" />
++-    <option name="LAST_COMMIT_MESSAGE" value="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert" />
+++    <MESSAGE value="Merge-Konflikte lÃösen" />
+++    <MESSAGE value="Merge-Konflikte lösen" />
+++    <option name="LAST_COMMIT_MESSAGE" value="Merge-Konflikte lösen" />
++   </component>
++ </project>
++\ No newline at end of file

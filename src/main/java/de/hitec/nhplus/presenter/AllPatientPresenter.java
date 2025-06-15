@@ -21,7 +21,7 @@ import java.time.LocalDate;
 
 
 /**
- * The <code>AllPatientController</code> contains the entire logic of the patient view. It determines which data is displayed and how to react to events.
+ * The <code>AllPatientPresenter</code> contains the entire logic of the patient view. It determines which data is displayed and how to react to events.
  */
 public class AllPatientPresenter {
 

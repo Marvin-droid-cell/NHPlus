@@ -2,6 +2,7 @@ package de.hitec.nhplus.presenter;
 
 import de.hitec.nhplus.datastorage.DaoFactory;
 import de.hitec.nhplus.datastorage.TreatmentDao;
+import de.hitec.nhplus.model.Caregiver;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -15,6 +16,9 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+/**
+ * The <code>NewTreatmentPresenter</code> contains the entire logic of the newTreatment view. It determines which data is displayed and how to react to events.
+ */
 public class NewTreatmentPresenter {
 
     @FXML
@@ -22,6 +26,12 @@ public class NewTreatmentPresenter {
 
     @FXML
     private Label labelSurname;
+
+    @FXML
+    private Label labelCaregiverName;
+
+    @FXML
+    private Label labelCaregiverTel;
 
     @FXML
     private TextField textFieldBegin;
@@ -41,13 +51,15 @@ public class NewTreatmentPresenter {
     @FXML
     private Button buttonAdd;
 
-    private AllTreatmentPresenter controller;
+    private AllTreatmentPresenter presenter;
     private Patient patient;
+    private Caregiver caregiver;
     private Stage stage;
 
-    public void initialize(AllTreatmentPresenter controller, Stage stage, Patient patient) {
-        this.controller= controller;
+    public void initialize(AllTreatmentPresenter presenter, Stage stage, Patient patient, Caregiver caregiver) {
+        this.presenter = presenter;
         this.patient = patient;
+        this.caregiver = caregiver;
         this.stage = stage;
 
         this.buttonAdd.setDisable(true);
@@ -75,6 +87,8 @@ public class NewTreatmentPresenter {
     private void showPatientData(){
         this.labelFirstName.setText(patient.getFirstName());
         this.labelSurname.setText(patient.getSurname());
+        this.labelCaregiverName.setText(caregiver.getSurname()+ ", " + caregiver.getFirstName());
+        this.labelCaregiverTel.setText(caregiver.getTelNumber());
     }
 
     @FXML
@@ -84,9 +98,9 @@ public class NewTreatmentPresenter {
         LocalTime end = DateConverter.convertStringToLocalTime(textFieldEnd.getText());
         String description = textFieldDescription.getText();
         String remarks = textAreaRemarks.getText();
-        Treatment treatment = new Treatment(patient.getPid(), date, begin, end, description, remarks);
+        Treatment treatment = new Treatment(patient.getPid(), date, begin, end, description, remarks, caregiver.getCgID());
         createTreatment(treatment);
-        controller.readAllAndShowInTableView();
+        presenter.readAllAndShowInTableView();
         stage.close();
     }
 
