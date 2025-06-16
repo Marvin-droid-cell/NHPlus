@@ -90,3 +90,13 @@ sowie Klassen und Methoden mit hoher Kohäsion schreibt. Wenn ihr beim Dokumenti
 ### Passwörter
 
 Gib hier nötige Benutzernamen und Passwörter an!
+
+"Natali Paul", "12345678"
+
+"Marilyn Monroe", "87654321"
+
+"Lili Bauer", "Hallo123"
+
+"Jarne Baum", "Hi987654321"
+
+"Marvin Meier", "BaumHierDa"

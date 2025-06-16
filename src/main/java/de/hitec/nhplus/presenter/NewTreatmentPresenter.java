@@ -98,7 +98,7 @@ public class NewTreatmentPresenter {
         LocalTime end = DateConverter.convertStringToLocalTime(textFieldEnd.getText());
         String description = textFieldDescription.getText();
         String remarks = textAreaRemarks.getText();
-        Treatment treatment = new Treatment(patient.getPid(), date, begin, end, description, remarks, caregiver.getCgID());
+        Treatment treatment = new Treatment(patient.getId(), date, begin, end, description, remarks, caregiver.getId());
         createTreatment(treatment);
         presenter.readAllAndShowInTableView();
         stage.close();

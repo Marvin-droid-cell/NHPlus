@@ -124,17 +124,19 @@ public class TreatmentDao extends DaoImp<Treatment> {
     }
 
     /**
-     * Generates a <code>PreparedStatement</code> to query all treatments of a patient with a given patient id (pid).
+     * Generates a prepared SQL statement to query all treatments associated with a specific person by their ID.
+     * The SQL statement utilizes the provided person identifier as a condition to retrieve relevant treatments.
      *
-     * @param pid Patient id to query all treatments referencing this id.
-     * @return <code>PreparedStatement</code> to query all treatments of the given patient id (pid).
+     * @param id The unique identifier of the person whose treatments are to be queried.
+     * @param personId The column name representing the person identifier in the database.
+     * @return A PreparedStatement object representing the query to retrieve all treatments for the specified person.
      */
-    private PreparedStatement getReadAllTreatmentsOfOnePatientByPid(long pid) {
+    private PreparedStatement getReadAllTreatmentsOfOnePersonById(long id, String personId) {
         PreparedStatement preparedStatement = null;
         try {
-            final String SQL = "SELECT * FROM treatment WHERE pid = ?";
+            final String SQL = "SELECT * FROM treatment WHERE " + personId + " = ?";
             preparedStatement = this.connection.prepareStatement(SQL);
-            preparedStatement.setLong(1, pid);
+            preparedStatement.setLong(1, id);
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
@@ -142,47 +144,19 @@ public class TreatmentDao extends DaoImp<Treatment> {
     }
 
     /**
-     * Queries all treatments of a given patient id (pid) and maps the results to an <code>ArrayList</code> with
-     * objects of class <code>Treatment</code>.
+     * Reads all treatments by a specified ID and person identifier.
      *
-     * @param pid Patient id to query all treatments referencing this id.
-     * @return <code>ArrayList</code> with objects of class <code>Treatment</code> of all rows in the
-     * <code>ResultSet</code>.
-     */
-    public List<Treatment> readTreatmentsByPid(long pid) throws SQLException {
-        ResultSet result = getReadAllTreatmentsOfOnePatientByPid(pid).executeQuery();
-        return getListFromResultSet(result);
-    }
-
-
-    /**
-     * Generates a <code>PreparedStatement</code> to query all treatments of a caregiver with a given caregiver id (cgid).
+     * This method retrieves all treatments associated with a specific ID and a given person identifier,
+     * utilizing the database for fetching the data. It returns the data mapped into a list of Treatment
+     * objects.
      *
-     * @param cgid caregiver id to query all treatments referencing this id.
-     * @return <code>PreparedStatement</code> to query all treatments of the given caregiver id (cgid).
+     * @param id       The identifier of the treatment or entity, such as a patient or caregiver ID.
+     * @param personId A string representing the type of person ID (e.g., "pid" for patient ID or "cgid" for caregiver ID).
+     * @return A list of {@code Treatment} objects corresponding to the retrieved data.
+     * @throws SQLException If a database access error occurs or the query execution fails.
      */
-    private PreparedStatement getReadAllTreatmentsOfOneCaregiverByCgid(long cgid) {
-        PreparedStatement preparedStatement = null;
-        try {
-            final String SQL = "SELECT * FROM treatment WHERE cgid = ?";
-            preparedStatement = this.connection.prepareStatement(SQL);
-            preparedStatement.setLong(1, cgid);
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-        }
-        return preparedStatement;
-    }
-
-    /**
-     * Queries all treatments of a given caregiver id (cgid) and maps the results to an <code>ArrayList</code> with
-     * objects of class <code>Treatment</code>.
-     *
-     * @param cgid Caregiver id to query all treatments referencing this id.
-     * @return <code>ArrayList</code> with objects of class <code>Treatment</code> of all rows in the
-     * <code>ResultSet</code>.
-     */
-    public List<Treatment> readTreatmentsByCgid(long cgid) throws SQLException {
-        ResultSet result = getReadAllTreatmentsOfOneCaregiverByCgid(cgid).executeQuery();
+    public List<Treatment> readTreatmentsById(long id, String personId) throws SQLException {
+        ResultSet result = getReadAllTreatmentsOfOnePersonById(id, personId).executeQuery();
         return getListFromResultSet(result);
     }
 
