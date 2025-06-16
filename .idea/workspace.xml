@@ -5,25 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34ff0ce-7744-41f9-a83e-ef9c348ef1da" name="Changes" comment="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/de/hitec/nhplus/UserLoginView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5a5b8be1-080b-4129-b89d-42f1ea832b90.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5a5b8be1-080b-4129-b89d-42f1ea832b90.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db/nursingHome.db" beforeDir="false" afterPath="$PROJECT_DIR$/db/nursingHome.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/CaregiverDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/CaregiverDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/DaoFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/PatientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/PatientDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/TreatmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/TreatmentDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Caregiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Caregiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Patient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllCaregiverPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllCaregiverPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllPatientPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllPatientPresenter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllTreatmentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllTreatmentPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/MainWindowPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/MainWindowPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/TreatmentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/TreatmentPresenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/utils/SetUpDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/utils/SetUpDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/NewTreatmentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/NewTreatmentPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/UserLoginPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/UserLoginPresenter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +101,7 @@
       <recent name="de.hitec.nhplus.utils" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.SetUpDB">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.hitec.nhplus.Main" />
       <module name="NHPlus" />
@@ -135,8 +130,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.SetUpDB" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +181,7 @@
       <workItem from="1749631619138" duration="5993000" />
       <workItem from="1749983824846" duration="299000" />
       <workItem from="1750000108949" duration="454000" />
-      <workItem from="1750000585466" duration="1126000" />
+      <workItem from="1750000585466" duration="21912000" />
     </task>
     <task id="LOCAL-00001" summary="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert">
       <option name="closed" value="true" />
@@ -235,11 +230,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/de/hitec/nhplus/controller/AllPatientPresenter.java</url>
           <line>217</line>
           <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllTreatmentPresenter.java</url>
-          <line>284</line>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

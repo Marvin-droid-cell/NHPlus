@@ -65,7 +65,7 @@ public class AllCaregiverPresenter {
     public void initialize() {
         this.readAllAndShowInTableView();
 
-        this.colID.setCellValueFactory(new PropertyValueFactory<>("cgID"));
+        this.colID.setCellValueFactory(new PropertyValueFactory<>("id"));
 
         // CellValueFactory to show property values in TableView
         this.colFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
@@ -169,7 +169,7 @@ public class AllCaregiverPresenter {
         Caregiver selectedItem = this.tableView.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             try {
-                DaoFactory.getDaoFactory().createCaregiverDao().deleteById(selectedItem.getCgID());
+                DaoFactory.getDaoFactory().createCaregiverDao().deleteById(selectedItem.getId());
                 this.tableView.getItems().remove(selectedItem);
             } catch (SQLException exception) {
                 exception.printStackTrace();

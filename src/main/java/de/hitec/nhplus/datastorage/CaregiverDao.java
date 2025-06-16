@@ -166,7 +166,7 @@ public class CaregiverDao extends DaoImp<Caregiver> {
             preparedStatement.setString(1, caregiver.getFirstName());
             preparedStatement.setString(2, caregiver.getSurname());
             preparedStatement.setString(3, caregiver.getTelNumber());
-            preparedStatement.setLong(4, caregiver.getCgID());
+            preparedStatement.setLong(4, caregiver.getId());
         } catch (SQLException exception) {
             exception.printStackTrace();
         }

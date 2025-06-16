@@ -36,7 +36,6 @@ public class UserLoginPresenter {
     @FXML
     private Button buttonLogin;
 
-    private Stage stage = new Stage();
 
     /**
      * Initializes the UI components when the view is loaded.
@@ -100,12 +99,11 @@ public class UserLoginPresenter {
             BorderPane pane = loader.load();
 
             Scene scene = new Scene(pane);
-            this.stage.setTitle("NHPlus");
-            this.stage.setScene(scene);
-            this.stage.setResizable(false);
-            this.stage.show();
+            Stage stage = (Stage) buttonLogin.getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
 
-            this.stage.setOnCloseRequest(event -> {
+            stage.setOnCloseRequest(event -> {
                 ConnectionBuilder.closeConnection();
                 Platform.exit();
                 System.exit(0);

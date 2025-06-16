@@ -78,7 +78,7 @@ public class AllPatientPresenter {
     public void initialize() {
         this.readAllAndShowInTableView();
 
-        this.columnId.setCellValueFactory(new PropertyValueFactory<>("pid"));
+        this.columnId.setCellValueFactory(new PropertyValueFactory<>("id"));
 
         // CellValueFactory to show property values in TableView
         this.columnFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
@@ -210,7 +210,7 @@ public class AllPatientPresenter {
         Patient selectedItem = this.tableView.getSelectionModel().getSelectedItem();
         if (selectedItem != null) {
             try {
-                DaoFactory.getDaoFactory().createPatientDao().deleteById(selectedItem.getPid());
+                DaoFactory.getDaoFactory().createPatientDao().deleteById(selectedItem.getId());
                 this.tableView.getItems().remove(selectedItem);
             } catch (SQLException exception) {
                 exception.printStackTrace();
