@@ -216,17 +216,20 @@ public class AllTreatmentPresenter {
     }
 
     /**
-     * Retrieves a list of treatments based on the provided selection and person information.
+     * Retrieves a list of treatments based on the selected value in a given ComboBox.
+     * The method fetches treatments for all persons if the "All" option is selected
+     * in the ComboBox, or filters treatments for a specific person if one is selected.
+     * The filtering is performed using the person's identifier and the specified column name.
      *
-     * @param <T> The type parameter indicating the type of the {@link Person}.
-     * @param comboBoxSelection The ComboBox containing the current selection used to filter treatments.
-     * @param personId The unique identifier of the person related to the treatments.
-     * @param personList A list of {@code Person} objects to search for the selected person.
-     * @return A list of {@link Treatment} objects corresponding to the selection and person information.
-     *         Returns all treatments if the selection encompasses all patients or caregivers.
-     * @throws RuntimeException If an SQL exception occurs while querying the treatments.
+     * @param <T> The type of person, which must extend the {@code Person} class.
+     * @param comboBoxSelection The ComboBox used for selecting a person or group.
+     * @param columnName The name of the database column used for filtering treatments.
+     * @param personList A list of persons that may include the selected person.
+     * @return A list of {@code Treatment} objects matching the specified criteria.
+     *         If no treatments match or an SQL exception occurs, an empty list is returned.
+     * @throws RuntimeException if a SQLException occurs during data retrieval.
      */
-    public <T extends Person> List<Treatment> getTreatments(ComboBox<String> comboBoxSelection, String personId, List<T> personList) {
+    public <T extends Person> List<Treatment> getTreatments(ComboBox<String> comboBoxSelection, String columnName, List<T> personList) {
         String selectedPerson = comboBoxSelection.getSelectionModel().getSelectedItem();
         List<Treatment> personTreatment = new ArrayList<>();
         try {
@@ -235,7 +238,7 @@ public class AllTreatmentPresenter {
             } else {
                 Person person = getPersonFromDisplayName(selectedPerson, personList);
                 if (person != null) {
-                    personTreatment.addAll(this.dao.readTreatmentsById(person.getId(), personId));
+                    personTreatment.addAll(this.dao.readTreatmentsById(person.getId(), columnName));
                 }
             }
         } catch (SQLException e) {

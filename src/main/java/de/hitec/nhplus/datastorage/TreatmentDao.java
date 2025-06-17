@@ -124,17 +124,17 @@ public class TreatmentDao extends DaoImp<Treatment> {
     }
 
     /**
-     * Generates a prepared SQL statement to query all treatments associated with a specific person by their ID.
-     * The SQL statement utilizes the provided person identifier as a condition to retrieve relevant treatments.
+     * Generates a PreparedStatement to query all treatments associated with a specific person,
+     * identified by their ID and the column name to match against.
      *
-     * @param id The unique identifier of the person whose treatments are to be queried.
-     * @param personId The column name representing the person identifier in the database.
-     * @return A PreparedStatement object representing the query to retrieve all treatments for the specified person.
+     * @param id The ID of the person whose treatments are to be queried.
+     * @param columnName The name of the column in the database table to match the person's ID against.
+     * @return A PreparedStatement to query all treatments for the specified person.
      */
-    private PreparedStatement getReadAllTreatmentsOfOnePersonById(long id, String personId) {
+    private PreparedStatement getReadAllTreatmentsOfOnePersonById(long id, String columnName) {
         PreparedStatement preparedStatement = null;
         try {
-            final String SQL = "SELECT * FROM treatment WHERE " + personId + " = ?";
+            final String SQL = "SELECT * FROM treatment WHERE " + columnName + " = ?";
             preparedStatement = this.connection.prepareStatement(SQL);
             preparedStatement.setLong(1, id);
         } catch (SQLException exception) {
@@ -144,19 +144,15 @@ public class TreatmentDao extends DaoImp<Treatment> {
     }
 
     /**
-     * Reads all treatments by a specified ID and person identifier.
+     * Retrieves a list of treatments for a specific person by their ID and specified column name.
      *
-     * This method retrieves all treatments associated with a specific ID and a given person identifier,
-     * utilizing the database for fetching the data. It returns the data mapped into a list of Treatment
-     * objects.
-     *
-     * @param id       The identifier of the treatment or entity, such as a patient or caregiver ID.
-     * @param personId A string representing the type of person ID (e.g., "pid" for patient ID or "cgid" for caregiver ID).
-     * @return A list of {@code Treatment} objects corresponding to the retrieved data.
-     * @throws SQLException If a database access error occurs or the query execution fails.
+     * @param id         The ID of the person for whom the treatments are to be retrieved.
+     * @param columnName The name of the database column used to filter treatments (e.g., patient's or caregiver's ID column).
+     * @return A list of {@code Treatment} objects representing the treatments associated with the specified person.
+     * @throws SQLException If a database access error occurs during the query execution or result mapping.
      */
-    public List<Treatment> readTreatmentsById(long id, String personId) throws SQLException {
-        ResultSet result = getReadAllTreatmentsOfOnePersonById(id, personId).executeQuery();
+    public List<Treatment> readTreatmentsById(long id, String columnName) throws SQLException {
+        ResultSet result = getReadAllTreatmentsOfOnePersonById(id, columnName).executeQuery();
         return getListFromResultSet(result);
     }
 
