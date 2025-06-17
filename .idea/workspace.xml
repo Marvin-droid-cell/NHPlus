@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a34ff0ce-7744-41f9-a83e-ef9c348ef1da" name="Changes" comment="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/TreatmentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/datastorage/TreatmentDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllTreatmentPresenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/hitec/nhplus/presenter/AllTreatmentPresenter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/doc/Testing.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +171,7 @@
       <workItem from="1750000108949" duration="454000" />
       <workItem from="1750000585466" duration="21912000" />
       <workItem from="1750142748595" duration="660000" />
-      <workItem from="1750153900254" duration="1085000" />
+      <workItem from="1750153900254" duration="2797000" />
     </task>
     <task id="LOCAL-00001" summary="Readme aktualisiert, Klassendiagramm hinzugefügt, JavaFX IB, Schriftarten aktualisiert">
       <option name="closed" value="true" />
